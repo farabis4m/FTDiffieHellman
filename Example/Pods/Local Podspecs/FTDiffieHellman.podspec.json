@@ -1,0 +1,22 @@
+{
+  "name": "FTDiffieHellman",
+  "version": "0.1.0",
+  "summary": "A short description of FTDiffieHellman.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/farabis4m/FTDiffieHellman",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "farabis4m": "aswin@farabi.ae"
+  },
+  "source": {
+    "git": "https://github.com/farabis4m/FTDiffieHellman.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "FTDiffieHellman/Classes/**/*"
+}

@@ -1,0 +1,6 @@
+use_frameworks!
+target 'FTDiffieHellman_Tests' do
+  pod 'FTDiffieHellman', :path => '../'
+  
+  
+end

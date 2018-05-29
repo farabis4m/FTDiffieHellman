@@ -1,0 +1,16 @@
+PODS:
+  - FTDiffieHellman (0.1.0)
+
+DEPENDENCIES:
+  - FTDiffieHellman (from `../`)
+
+EXTERNAL SOURCES:
+  FTDiffieHellman:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FTDiffieHellman: f007fe4f01330a50570e4fbb3c5bb33ae85fb387
+
+PODFILE CHECKSUM: ec744b2d0996b167890b57771d7e5c82cd6be16f
+
+COCOAPODS: 1.4.0
