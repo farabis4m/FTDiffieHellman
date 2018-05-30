@@ -21,13 +21,10 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'FTDiffieHellman/Classes/**/*'
-  s.ios.public_header_files = 'include/openssl/**/*.h'
-  s.ios.header_dir          = 'openssl'
-  s.ios.preserve_paths      = 'lib-ios/libcrypto.a', 'lib-ios/libssl.a'
-  s.ios.vendored_libraries  = 'lib-ios/libcrypto.a', 'lib-ios/libssl.a'
-  s.libraries = 'ssl', 'crypto
+  s.source_files = 'FTDiffieHellman/Classes/**/*', 'FTDiffieHellman/include/openssl/**/*.h'
 
+  s.dependency 'OpenSSL-Universal'
+  s.static_framework = true
   # s.resource_bundles = {
   #   'FTDiffieHellman' => ['FTDiffieHellman/Assets/*.png']
   # }
