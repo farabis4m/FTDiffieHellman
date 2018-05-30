@@ -13,8 +13,6 @@
 		B3341C0D6CCA3DB313E47C457D71363F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CE65A68720BE65D900463CBA /* FTDiffieHellman.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65A68520BE65D900463CBA /* FTDiffieHellman.h */; };
 		CE65A68820BE65D900463CBA /* FTDiffieHellman.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65A68620BE65D900463CBA /* FTDiffieHellman.m */; };
-		CE65A68C20BE66B600463CBA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE65A68A20BE66B600463CBA /* libcrypto.a */; };
-		CE65A68D20BE66B600463CBA /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE65A68B20BE66B600463CBA /* libssl.a */; };
 		D22F06B7947B86718B7C1AEB2468247D /* FTDiffieHellman-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 613BBC582B55193CFF5DDA56E3E4463E /* FTDiffieHellman-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC1AD3F8E5CDB1A992307CE54FC76FE2 /* FTDiffieHellman-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A51EAC76A0203D601B1664A5BD31AD /* FTDiffieHellman-dummy.m */; };
 /* End PBXBuildFile section */
@@ -55,8 +53,6 @@
 		C2B1BA0A75C4352FEE8B38C759B37A87 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE65A68520BE65D900463CBA /* FTDiffieHellman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTDiffieHellman.h; path = FTDiffieHellman/Classes/FTDiffieHellman.h; sourceTree = "<group>"; };
 		CE65A68620BE65D900463CBA /* FTDiffieHellman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTDiffieHellman.m; path = FTDiffieHellman/Classes/FTDiffieHellman.m; sourceTree = "<group>"; };
-		CE65A68A20BE66B600463CBA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../FTDiffieHellman/libs/libcrypto.a; sourceTree = "<group>"; };
-		CE65A68B20BE66B600463CBA /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../FTDiffieHellman/libs/libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE65A68C20BE66B600463CBA /* libcrypto.a in Frameworks */,
 				B3341C0D6CCA3DB313E47C457D71363F /* Foundation.framework in Frameworks */,
-				CE65A68D20BE66B600463CBA /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +160,6 @@
 		CE65A68920BE669A00463CBA /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				CE65A68A20BE66B600463CBA /* libcrypto.a */,
-				CE65A68B20BE66B600463CBA /* libssl.a */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
