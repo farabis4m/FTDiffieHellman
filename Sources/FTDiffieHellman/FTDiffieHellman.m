@@ -29,7 +29,7 @@
 - (instancetype)initWithPrime:(NSString *)prime andGenerator:(NSString *)generator{
     if (self = [super init]) {
         [self initialize];
-
+        
         if (prime && generator) {
             [self setPrime:prime andGenerator:generator];
         }
@@ -63,10 +63,9 @@
     NSParameterAssert(generator);
     
     BIGNUM *p = bigNumberFromDecimalString(prime);
-    dh->p = p;
-    
     BIGNUM *g = bigNumberFromDecimalString(generator);
-    dh->g = g;
+    
+    DH_set0_pqg(dh, p, nil, g);
     
     int codes; //This will be a Bit Masked integer after the check
     int valid = DH_check(dh, &codes);
@@ -108,7 +107,7 @@
         
         char errorString[1000];
         char *errorStringDetail = ERR_error_string(errorCode, errorString);
-
+        
         NSString *message = [NSString stringWithCString:errorStringDetail encoding:NSASCIIStringEncoding];
         if (error != NULL) {
             //TODO : Fix the error getting Nil
@@ -124,19 +123,19 @@
 #pragma mark - Getter methods
 
 - (NSString *)primeNumber{
-    return decimalStringFromBigNumber(dh->p);
+    return decimalStringFromBigNumber(DH_get0_p(dh));
 }
 
 - (NSString *)generator{
-    return decimalStringFromBigNumber(dh->g);
+    return decimalStringFromBigNumber(DH_get0_g(dh));
 }
 
 - (NSData *)publicKey{
-    return dataFromBigNumber(dh->pub_key);
+    return dataFromBigNumber(DH_get0_pub_key(dh));
 }
 
 - (NSData *)privateKey{
-    return dataFromBigNumber(dh->priv_key);
+    return dataFromBigNumber(DH_get0_priv_key(dh));
 }
 
 #pragma mark - BIGNUM conversions
@@ -159,17 +158,17 @@ NSData * dataFromBigNumber(BIGNUM *bn){
     
     
     unsigned char *sBuffer;
-
+    
     NSUInteger aLength = BN_num_bytes(bn);
     
     sBuffer = calloc(1, aLength);
     BN_bn2bin(bn, sBuffer);
     
     return [NSData dataWithBytesNoCopy:sBuffer length:aLength freeWhenDone:YES];
-                                      
-//    unsigned char *data = malloc(BN_num_bytes(bn));
-//    int length = BN_bn2bin(bn, data);
-//    return [NSData dataWithBytesNoCopy:data length:length freeWhenDone:YES];
+    
+    //    unsigned char *data = malloc(BN_num_bytes(bn));
+    //    int length = BN_bn2bin(bn, data);
+    //    return [NSData dataWithBytesNoCopy:data length:length freeWhenDone:YES];
 }
 
 BIGNUM * bigNumberFromData(NSData *data){
