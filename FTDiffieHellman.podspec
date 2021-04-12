@@ -21,7 +21,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'FTDiffieHellman/Classes/**/*'
+  s.source_files = 'Sources/FTDiffieHellman/**/*'
 
   s.dependency 'OpenSSL-Universal'
   s.static_framework = true
